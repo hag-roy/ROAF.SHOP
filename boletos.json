@@ -1,79 +1,79 @@
 [
-  {
-    "boleto": "30",
-    "nombre": "Eduardo",
-    "telefono": "7776199043",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
-  {
-    "boleto": "28",
-    "nombre": "Yeni",
-    "telefono": "7772656041",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
-  {
-    "boleto": "68",
-    "nombre": "Daniela",
-    "telefono": "7774510723",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
-  {
-    "boleto": "27",
-    "nombre": "Eduardo",
-    "telefono": "7776199043",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
     {
-    "boleto": "25",
-    "nombre": "Jesus",
-    "telefono": "7774962455",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
+        "boleto": "30",
+        "nombre": "Eduardo",
+        "telefono": "7776199043",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
-    "boleto": "54",
-    "nombre": "zair",
-    "telefono": "7771793859",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
+        "boleto": "28",
+        "nombre": "Yeni",
+        "telefono": "7772656041",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
-    "boleto": "48",
-    "nombre": "Faro",
-    "telefono": "7341129140",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
+        "boleto": "68",
+        "nombre": "Daniela",
+        "telefono": "7774510723",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
-    "boleto": "33",
-    "nombre": "Cristian",
-    "telefono": "7778531667",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
+        "boleto": "27",
+        "nombre": "Eduardo",
+        "telefono": "7776199043",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
-    "boleto": "83",
-    "nombre": "Heriberto",
-    "telefono": "7778705191",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
+        "boleto": "25",
+        "nombre": "Jesus",
+        "telefono": "7774962455",
+        "eliminado": true,
+        "hora_eliminacion": "2026-10-19 23:16:50"
+    },
     {
-    "boleto": "43",
-    "nombre": "Salvador",
-    "telefono": "7778694966",
-    "eliminado": false,
-    "hora_eliminacion": null
-  },
+        "boleto": "54",
+        "nombre": "zair",
+        "telefono": "7771793859",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
-    "boleto": "29",
-    "nombre": "Norberto",
-    "telefono": "7775151487",
-    "eliminado": false,
-    "hora_eliminacion": null
-  }
+        "boleto": "48",
+        "nombre": "Faro",
+        "telefono": "7341129140",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+    {
+        "boleto": "33",
+        "nombre": "Cristian",
+        "telefono": "7778531667",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+    {
+        "boleto": "83",
+        "nombre": "Heriberto",
+        "telefono": "7778705191",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+    {
+        "boleto": "43",
+        "nombre": "Salvador",
+        "telefono": "7778694966",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+    {
+        "boleto": "29",
+        "nombre": "Norberto",
+        "telefono": "7775151487",
+        "eliminado": false,
+        "hora_eliminacion": null
+    }
 ]
