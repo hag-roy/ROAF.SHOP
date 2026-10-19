@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran Rifa - RO Store</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --primary: #3b82f6;
+            --danger: #ef4444;
+            --success: #10b981;
+            --text: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-image: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        h1 {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .search-box { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+        input[type="text"] {
+            padding: 12px 20px; width: 60%; background: #0f172a; border: 1px solid #3b82f6;
+            color: white; border-radius: 8px; font-size: 16px; outline: none;
+        }
+        button {
+            padding: 12px 25px; background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+        }
+        .ruleta-container {
+            background: #000; border: 2px solid var(--primary); border-radius: 12px;
+            height: 100px; display: flex; align-items: center; justify-content: center;
+            margin: 20px 0; overflow: hidden; position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+        #ruleta-texto { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
+        .animando { color: #cbd5e1; filter: blur(1px); }
+        .target-eliminado { color: var(--danger); text-shadow: 0 0 15px rgba(239, 68, 68, 0.6); transform: scale(1.1); }
+        .target-ganador { color: var(--success); text-shadow: 0 0 20px rgba(16, 185, 129, 0.8); font-size: 3rem !important; }
+        .eliminados-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;
+        }
+        .eliminado-card {
+            background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 15px; border-radius: 8px; color: #fca5a5; display: flex; flex-direction: column;
+        }
+        .eliminado-card span.hora { font-size: 0.8em; color: #94a3b8; margin-top: 5px; }
+        #mensaje-estado { font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎟️ Sorteo POCO C71</h1>
+        
+        <div class="panel">
+            <h3>🔍 Verifica tus boletos</h3>
+            <div class="search-box">
+                <input type="text" id="telefono-input" placeholder="Tu número (Ej. 7771234567)">
+                <button onclick="buscarBoletos()">Buscar</button>
+            </div>
+            <div id="resultado-busqueda" style="margin-top: 15px; font-weight: bold; color: var(--primary);"></div>
+        </div>
+
+        <div class="panel">
+            <div id="mensaje-estado">Conectando con la base de datos...</div>
+            <div class="ruleta-container">
+                <div id="ruleta-texto">ESPERANDO...</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3 style="color: var(--danger);">💀 Lista de Eliminados</h3>
+            <div class="eliminados-grid" id="lista-eliminados"></div>
+        </div>
+    </div>
+
+    <script>
+        let baseDeDatos = []; 
+
+        async function iniciarSorteo() {
+            try {
+                const respuesta = await fetch('boletos.json?' + new Date().getTime());
+                baseDeDatos = await respuesta.json();
+                procesarDatos(baseDeDatos);
+            } catch (error) {
+                document.getElementById("mensaje-estado").innerHTML = "Error al cargar los datos. Revisa la conexión.";
+                console.error(error);
+            }
+        }
+
+        function procesarDatos(participantes) {
+            const eliminados = participantes.filter(p => p.eliminado);
+            const activos = participantes.filter(p => !p.eliminado);
+            
+            const gridHTML = document.getElementById("lista-eliminados");
+            const mensaje = document.getElementById("mensaje-estado");
+            
+            gridHTML.innerHTML = "";
+
+            eliminados.forEach(p => {
+                gridHTML.innerHTML += `
+                    <div class="eliminado-card">
+                        <strong>❌ ${p.nombre}</strong>
+                        <span>Boleto: ${p.boleto}</span>
+                        <span class="hora">Hora: ${p.hora_eliminacion.split(' ')[1]}</span>
+                    </div>`;
+            });
+
+            if (activos.length === 1 && eliminados.length > 0) {
+                mensaje.innerHTML = "🏆 ¡SORTEO FINALIZADO! 🏆";
+                girarRuleta(`¡${activos[0].nombre} (Bol: ${activos[0].boleto})!`, true, activos);
+            } 
+            else if (eliminados.length > 0) {
+                mensaje.innerHTML = "Último boleto eliminado:";
+                const ultimo = eliminados[eliminados.length - 1];
+                girarRuleta(`${ultimo.nombre} (Bol: ${ultimo.boleto})`, false, participantes);
+            } 
+            else {
+                mensaje.innerHTML = "El sorteo aún no comienza...";
+                document.getElementById("ruleta-texto").innerText = "PREPARANDO...";
+                document.getElementById("ruleta-texto").className = "";
+            }
+        }
+
+        function girarRuleta(textoFinal, esGanador, listaParaGirar) {
+            const ruleta = document.getElementById("ruleta-texto");
+            ruleta.className = "animando";
+            
+            const intervalo = setInterval(() => {
+                const random = Math.floor(Math.random() * listaParaGirar.length);
+                ruleta.innerText = listaParaGirar[random].nombre;
+            }, 50);
+
+            setTimeout(() => {
+                clearInterval(intervalo);
+                ruleta.innerText = textoFinal;
+                ruleta.className = esGanador ? "target-ganador" : "target-eliminado";
+            }, 2500);
+        }
+
+        function buscarBoletos() {
+            const tel = document.getElementById("telefono-input").value.trim();
+            const res = document.getElementById("resultado-busqueda");
+            
+            const misBoletos = baseDeDatos.filter(p => p.telefono === tel);
+            
+            if (misBoletos.length > 0) {
+                const info = misBoletos.map(b => {
+                    let estado = b.eliminado ? " (💀 Eliminado)" : " (✅ Activo)";
+                    return `Boleto ${b.boleto}${estado}`;
+                }).join(" | ");
+                res.innerHTML = info;
+            } else {
+                res.innerHTML = `<span style="color: var(--danger)">❌ No tienes boletos registrados.</span>`;
+            }
+        }
+
+        window.onload = iniciarSorteo;
+    </script>
+</body>
+</html>

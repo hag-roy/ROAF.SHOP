@@ -1,0 +1,30 @@
+[
+  {
+    "boleto": "01",
+    "nombre": "Juan Pérez",
+    "telefono": "7771112233",
+    "eliminado": false,
+    "hora_eliminacion": null
+  },
+  {
+    "boleto": "02",
+    "nombre": "María López",
+    "telefono": "7774445566",
+    "eliminado": false,
+    "hora_eliminacion": null
+  },
+  {
+    "boleto": "03",
+    "nombre": "Carlos Ruiz",
+    "telefono": "7777778899",
+    "eliminado": false,
+    "hora_eliminacion": null
+  },
+  {
+    "boleto": "04",
+    "nombre": "Afrodita",
+    "telefono": "7779990000",
+    "eliminado": false,
+    "hora_eliminacion": null
+  }
+]
