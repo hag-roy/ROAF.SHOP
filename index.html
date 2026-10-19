@@ -156,6 +156,7 @@
         .animando { color: #fff; filter: blur(2px); transform: scale(1.05); }
         .target-eliminado { color: var(--neon-pink); text-shadow: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink); transform: scale(1.1); }
         .target-ganador { color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 50px var(--neon-green); font-size: 3.5rem !important; transform: scale(1.15); animation: pulse-win 1s infinite alternate; }
+        .target-espera { color: #64748b; text-shadow: none; font-size: 2.5rem !important; }
 
         /* Eliminados Grid */
         .eliminados-grid {
@@ -259,12 +260,113 @@
 
         <!-- AQUÍ ESTÁ TU FIRMA COMO CREADOR -->
         <div class="creditos-footer">
-            Sistema desarrollado y diseñado por <span> Hernandez Acevedo Rodrigo / ROAF SHOP</span> © 2026
+            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo / ROAF SHOP</span> © 2026
         </div>
     </div>
 
-    <!-- Script de lógica (Se mantiene idéntico para que siga funcionando con GitHub Actions) -->
+    <!-- Script de lógica -->
     <script>
         let baseDeDatos = []; 
 
-        async function iniciarSorte
+        async function iniciarSorteo() {
+            try {
+                const respuesta = await fetch('boletos.json?' + new Date().getTime());
+                if (!respuesta.ok) throw new Error("No se pudo cargar el archivo");
+                baseDeDatos = await respuesta.json();
+                procesarDatos(baseDeDatos);
+            } catch (error) {
+                document.getElementById("mensaje-estado").innerHTML = "Error al cargar los datos. Verifica que boletos.json esté subido.";
+                document.getElementById("mensaje-estado").style.color = "var(--neon-pink)";
+                console.error(error);
+            }
+        }
+
+        function procesarDatos(participantes) {
+            const eliminados = participantes.filter(p => p.eliminado);
+            const activos = participantes.filter(p => !p.eliminado);
+            
+            const gridHTML = document.getElementById("lista-eliminados");
+            const mensaje = document.getElementById("mensaje-estado");
+            
+            gridHTML.innerHTML = "";
+
+            // ESTADO 1: AÚN NO INICIA (Cero eliminados)
+            if (eliminados.length === 0) {
+                mensaje.innerHTML = "⏳ El sorteo aún no inicia. ¡Prepara tus boletos!";
+                mensaje.style.color = "var(--neon-blue)";
+                
+                const ruleta = document.getElementById("ruleta-texto");
+                ruleta.innerText = "AÚN NO INICIA";
+                ruleta.className = "target-espera";
+                
+                gridHTML.innerHTML = "<div style='grid-column: 1 / -1; color: #64748b; font-weight: 300;'>Nadie ha sido eliminado todavía.</div>";
+                return; 
+            }
+
+            // Si ya inició, mostramos las tarjetas de los que ya perdieron
+            eliminados.forEach(p => {
+                gridHTML.innerHTML += `
+                    <div class="eliminado-card">
+                        <strong>❌ ${p.nombre}</strong>
+                        <span>Boleto: ${p.boleto}</span>
+                        <span class="hora">Hora: ${p.hora_eliminacion.split(' ')[1]}</span>
+                    </div>`;
+            });
+
+            // ESTADO 2: GANADOR ABSOLUTO
+            if (activos.length === 1 && eliminados.length > 0) {
+                mensaje.innerHTML = "🏆 ¡TENEMOS UN GANADOR ABSOLUTO! 🏆";
+                mensaje.style.color = "var(--neon-green)";
+                girarRuleta(`¡${activos[0].nombre} (Bol: ${activos[0].boleto})!`, true, activos);
+            } 
+            // ESTADO 3: EN PROCESO DE ELIMINACIÓN
+            else if (eliminados.length > 0) {
+                mensaje.innerHTML = "Último participante eliminado:";
+                mensaje.style.color = "#a0a0a0"; // Reset de color
+                const ultimo = eliminados[eliminados.length - 1];
+                girarRuleta(`${ultimo.nombre} (Bol: ${ultimo.boleto})`, false, participantes);
+            }
+        }
+
+        function girarRuleta(textoFinal, esGanador, listaParaGirar) {
+            const ruleta = document.getElementById("ruleta-texto");
+            ruleta.className = "animando";
+            
+            const intervalo = setInterval(() => {
+                const random = Math.floor(Math.random() * listaParaGirar.length);
+                ruleta.innerText = listaParaGirar[random].nombre;
+            }, 50);
+
+            setTimeout(() => {
+                clearInterval(intervalo);
+                ruleta.innerText = textoFinal;
+                ruleta.className = esGanador ? "target-ganador" : "target-eliminado";
+            }, 2500);
+        }
+
+        function buscarBoletos() {
+            const tel = document.getElementById("telefono-input").value.trim();
+            const res = document.getElementById("resultado-busqueda");
+            
+            if (baseDeDatos.length === 0) {
+                res.innerHTML = `<span style="color: var(--neon-pink)">❌ Base de datos no cargada aún.</span>`;
+                return;
+            }
+
+            const misBoletos = baseDeDatos.filter(p => p.telefono === tel);
+            
+            if (misBoletos.length > 0) {
+                const info = misBoletos.map(b => {
+                    let estado = b.eliminado ? " (💀 Eliminado)" : " (✅ Activo)";
+                    return `Boleto ${b.boleto}${estado}`;
+                }).join(" | ");
+                res.innerHTML = info;
+            } else {
+                res.innerHTML = `<span style="color: var(--neon-pink)">❌ No se encontraron boletos con ese número.</span>`;
+            }
+        }
+
+        window.onload = iniciarSorteo;
+    </script>
+</body>
+</html>
