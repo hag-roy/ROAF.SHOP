@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gran Sorteo - ROAF SHOP</title>
+    <title>Gran Sorteo - RO Store</title>
     <!-- Fuentes de Google para un toque premium -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
@@ -208,6 +208,15 @@
             text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
         }
 
+        /* Responsivo para celulares */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .search-box { flex-direction: column; }
+            input[type="text"], button { width: 100%; }
+            #ruleta-texto { font-size: 2rem; }
+            .panel { padding: 25px 15px; }
+        }
+
         /* Animaciones */
         @keyframes pulse-glow {
             0% { text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); }
@@ -218,21 +227,12 @@
             0% { text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green); }
             100% { text-shadow: 0 0 40px var(--neon-green), 0 0 80px var(--neon-green), 0 0 120px var(--neon-green); }
         }
-
-        /* Responsivo para celulares */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .search-box { flex-direction: column; }
-            input[type="text"], button { width: 100%; }
-            #ruleta-texto { font-size: 2rem; }
-            .panel { padding: 25px 15px; }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>🎟️ ROAF SORTEOS</h1>
+        <h1>🎟️ RO STORE SORTEOS</h1>
         
         <!-- Buscador -->
         <div class="panel">
@@ -258,9 +258,9 @@
             <div class="eliminados-grid" id="lista-eliminados"></div>
         </div>
 
-        <!-- AQUÍ ESTÁ TU FIRMA COMO CREADOR -->
+        <!-- FIRMA COMO CREADOR -->
         <div class="creditos-footer">
-            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo / ROAF SHOP</span> © 2026
+            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo / ROAF.SHOP </span> © 2026
         </div>
     </div>
 
@@ -356,11 +356,32 @@
             const misBoletos = baseDeDatos.filter(p => p.telefono === tel);
             
             if (misBoletos.length > 0) {
-                const info = misBoletos.map(b => {
-                    let estado = b.eliminado ? " (💀 Eliminado)" : " (✅ Activo)";
-                    return `Boleto ${b.boleto}${estado}`;
-                }).join(" | ");
-                res.innerHTML = info;
+                // 1. OBTENER LA HORA PARA EL SALUDO
+                const horaActual = new Date().getHours();
+                let saludo = "Buenas noches";
+                if (horaActual >= 5 && horaActual < 12) {
+                    saludo = "Buenos días";
+                } else if (horaActual >= 12 && horaActual < 19) {
+                    saludo = "Buenas tardes";
+                }
+
+                // 2. EXTRAER EL NOMBRE DEL PARTICIPANTE
+                const nombreParticipante = misBoletos[0].nombre;
+
+                // 3. FORMATO DE LOS BOLETOS
+                const infoBoletos = misBoletos.map(b => {
+                    let estado = b.eliminado ? " <span style='color: var(--neon-pink); font-size: 0.9em;'>(💀 Eliminado)</span>" : " <span style='color: var(--neon-green); font-size: 0.9em;'>(✅ Activo)</span>";
+                    return `<div style='background: rgba(0,0,0,0.5); padding: 8px 15px; border-radius: 8px; display: inline-block; margin: 5px; border: 1px solid rgba(0, 240, 255, 0.2);'>Boleto <strong>${b.boleto}</strong>${estado}</div>`;
+                }).join("");
+
+                // 4. MOSTRAR EL MENSAJE CON SALUDO PERSONALIZADO
+                res.innerHTML = `
+                    <div style="margin-bottom: 15px; color: #fff; font-size: 1.2rem;">
+                        👋 ¡${saludo}, <span style="color: var(--neon-blue); text-transform: uppercase; font-weight: bold;">${nombreParticipante}</span>!
+                    </div>
+                    <div style="color: #a0a0a0; font-size: 0.95rem; margin-bottom: 10px;">Aquí están tus números:</div>
+                    <div>${infoBoletos}</div>
+                `;
             } else {
                 res.innerHTML = `<span style="color: var(--neon-pink)">❌ No se encontraron boletos con ese número.</span>`;
             }
