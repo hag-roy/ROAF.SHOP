@@ -328,6 +328,13 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
+       {
+        "boleto": "67",
+        "nombre": "Diana",
+        "telefono": "7775600288",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
         "boleto": "42",
         "nombre": "Itzel",
