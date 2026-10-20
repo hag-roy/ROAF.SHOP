@@ -112,21 +112,21 @@
         "hora_eliminacion": null
     },
      {
-        "boleto": "23",
+        "boleto": "62",
         "nombre": "Ali",
         "telefono": "7771077929",
         "eliminado": false,
         "hora_eliminacion": null
     },
         {
-        "boleto": "15",
+        "boleto": "40",
         "nombre": "Ali",
         "telefono": "7771077929",
         "eliminado": false,
         "hora_eliminacion": null
     },
        {
-        "boleto": "13",
+        "boleto": "65",
         "nombre": "Afrodita",
         "telefono": "7774102599",
         "eliminado": false,
@@ -158,14 +158,6 @@
     
     {
         "boleto": "04",
-        "nombre": "Santos",
-        "telefono": "7775955784",
-        "eliminado": false,
-        "hora_eliminacion": null
-    },
-    
-    {
-        "boleto": "19",
         "nombre": "Santos",
         "telefono": "7775955784",
         "eliminado": false,
@@ -219,7 +211,7 @@
         "hora_eliminacion": null
     },
         {
-        "boleto": "15",
+        "boleto": "08",
         "nombre": "Araceli",
         "telefono": "7775004716",
         "eliminado": false,
@@ -285,7 +277,54 @@
         "telefono": "7772050212",
         "eliminado": false,
         "hora_eliminacion": null
+    },
+         {
+        "boleto": "69",
+        "nombre": "Itzel",
+        "telefono": "7772109786",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+         {
+        "boleto": "06",
+        "nombre": "Itzel",
+        "telefono": "7772109786",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+         {
+        "boleto": "02",
+        "nombre": "Jesus Briones",
+        "telefono": "7773425102",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+      {
+        "boleto": "11",
+        "nombre": "Jesus Briones",
+        "telefono": "7773425102",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+     {
+        "boleto": "80",
+        "nombre": "Hasly ",
+        "telefono": "7351096778",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+      {
+        "boleto": "82",
+        "nombre": "Hasly ",
+        "telefono": "7351096778",
+        "eliminado": false,
+        "hora_eliminacion": null
     }
+    
+
+
+
+
 
     
     
