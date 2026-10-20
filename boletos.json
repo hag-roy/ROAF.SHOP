@@ -76,95 +76,90 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "45",
         "nombre": "Daniela",
         "telefono": "7774510723",
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "53",
         "nombre": "Daniela",
         "telefono": "7774510723",
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "35",
         "nombre": "Eduardo",
         "telefono": "7776199043",
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "46",
         "nombre": "Eduardo",
         "telefono": "7776199043",
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "16",
         "nombre": "Afrodita",
         "telefono": "7774102599",
         "eliminado": false,
         "hora_eliminacion": null
     },
-     {
+    {
         "boleto": "26",
         "nombre": "Ali",
         "telefono": "7771077929",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:07 PM"
     },
-        {
+    {
         "boleto": "99",
         "nombre": "Ali",
         "telefono": "7771077929",
         "eliminado": false,
         "hora_eliminacion": null
     },
-       {
+    {
         "boleto": "65",
         "nombre": "Afrodita",
         "telefono": "7774102599",
         "eliminado": false,
         "hora_eliminacion": null
     },
-        {
+    {
         "boleto": "36",
         "nombre": "Diana",
         "telefono": "7775600288",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-       {
+    {
         "boleto": "37",
         "nombre": "Diana",
         "telefono": "7775600288",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-     {
+    {
         "boleto": "19",
         "nombre": "Santos",
         "telefono": "7775955784",
         "eliminado": false,
         "hora_eliminacion": null
     },
-    
     {
         "boleto": "04",
         "nombre": "Santos",
         "telefono": "7775955784",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:07 PM"
     },
-    
-
     {
         "boleto": "03",
         "nombre": "Gaby Salgado",
@@ -172,31 +167,28 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
-    
-       {
+    {
         "boleto": "17",
         "nombre": "Gaby Salgado",
         "telefono": "7773384994",
         "eliminado": false,
         "hora_eliminacion": null
     },
-    
-       {
+    {
         "boleto": "23",
         "nombre": "Liliana Aguilar",
         "telefono": "7772750910",
         "eliminado": false,
         "hora_eliminacion": null
     },
-       {
+    {
         "boleto": "15",
         "nombre": "Esmeralda",
         "telefono": "7772050212",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-        {
+    {
         "boleto": "13",
         "nombre": "Esmeralda",
         "telefono": "7772050212",
@@ -207,133 +199,119 @@
         "boleto": "10",
         "nombre": "Esmeralda",
         "telefono": "7772050212",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:07 PM"
     },
-        {
+    {
         "boleto": "08",
         "nombre": "Araceli",
         "telefono": "7775004716",
         "eliminado": false,
         "hora_eliminacion": null
     },
- {
+    {
         "boleto": "22",
         "nombre": "Araceli",
         "telefono": "7775004716",
         "eliminado": false,
         "hora_eliminacion": null
     },
- {
+    {
         "boleto": "24",
         "nombre": "Victor",
         "telefono": "7772236936",
         "eliminado": false,
         "hora_eliminacion": null
     },
- {
+    {
         "boleto": "20",
         "nombre": "Victor",
         "telefono": "7772236936",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
- {
+    {
         "boleto": "18",
         "nombre": "Maria Araceli",
         "telefono": "7772155016",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-
- {
+    {
         "boleto": "21",
         "nombre": "Maria Araceli",
         "telefono": "7772155016",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-     {
+    {
         "boleto": "07",
         "nombre": "Maricela",
         "telefono": "7771352455",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:07 PM"
     },
- {
+    {
         "boleto": "12",
         "nombre": "Maricela",
         "telefono": "7771352455",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-     {
+    {
         "boleto": "01",
         "nombre": "Esmeralda",
         "telefono": "7772050212",
         "eliminado": false,
         "hora_eliminacion": null
     },
-         {
+    {
         "boleto": "69",
         "nombre": "Itzel",
         "telefono": "7772109786",
         "eliminado": false,
         "hora_eliminacion": null
     },
-         {
+    {
         "boleto": "06",
         "nombre": "Itzel",
         "telefono": "7772109786",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:07 PM"
     },
-         {
+    {
         "boleto": "02",
         "nombre": "Jesus Briones",
         "telefono": "7773425102",
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "11",
         "nombre": "Jesus Briones",
         "telefono": "7773425102",
         "eliminado": false,
         "hora_eliminacion": null
     },
-     {
+    {
         "boleto": "80",
         "nombre": "Hasly ",
         "telefono": "7351096778",
         "eliminado": false,
         "hora_eliminacion": null
     },
-      {
+    {
         "boleto": "82",
         "nombre": "Hasly ",
         "telefono": "7351096778",
         "eliminado": false,
         "hora_eliminacion": null
     },
-       {
+    {
         "boleto": "09",
         "nombre": "Liliana ",
         "telefono": "7772750910",
         "eliminado": false,
         "hora_eliminacion": null
     }
-    
-
-
-
-
-
-    
-    
-    
 ]
