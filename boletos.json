@@ -104,4 +104,11 @@
         "eliminado": false,
         "hora_eliminacion": null
     }
+      {
+        "boleto": "16",
+        "nombre": "Afrodita",
+        "telefono": "7774102599",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
 ]
