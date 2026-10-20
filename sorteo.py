@@ -25,16 +25,23 @@ if hora >= 19:
     else:
         print("El ganador ya estaba decidido.")
 
-# 2. De 3:00 PM a 6:30 PM, eliminamos de uno en uno cada media hora
+# 2. De 3:00 PM a 6:30 PM, eliminamos de 5 en 5 cada media hora
 elif hora >= 15:
-    if len(activos) > 2: # Se detiene cuando solo quedan 2 finalistas
-        victima = random.choice(activos)
-        for p in participantes:
-            if p['boleto'] == victima['boleto']:
-                p['eliminado'] = True
-                p['hora_eliminacion'] = ahora.strftime("%I:%M %p")
-                print(f"Eliminado a las {ahora.strftime('%I:%M %p')}: {p['nombre']}")
-                break
+    if len(activos) > 2: 
+        # Calcula cuántos eliminar (5 por defecto, pero asegurando que mínimo queden 2 vivos)
+        cantidad_eliminar = min(5, len(activos) - 2)
+        victimas = random.sample(activos, cantidad_eliminar)
+        
+        nombres_eliminados = []
+        for victima in victimas:
+            for p in participantes:
+                if p['boleto'] == victima['boleto']:
+                    p['eliminado'] = True
+                    p['hora_eliminacion'] = ahora.strftime("%I:%M %p")
+                    nombres_eliminados.append(p['nombre'])
+                    break
+                    
+        print(f"Eliminados a las {ahora.strftime('%I:%M %p')}: {', '.join(nombres_eliminados)}")
     else:
         print("Ya están los 2 finalistas listos. Esperando a las 7 PM.")
         
