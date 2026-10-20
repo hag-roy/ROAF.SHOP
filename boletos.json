@@ -3,8 +3,8 @@
         "boleto": "30",
         "nombre": "Eduardo",
         "telefono": "7776199043",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:32 PM"
     },
     {
         "boleto": "28",
@@ -31,8 +31,8 @@
         "boleto": "25",
         "nombre": "Jesus",
         "telefono": "7774962455",
-        "eliminado": false,
-        "hora_eliminacion": "null"
+        "eliminado": true,
+        "hora_eliminacion": "03:32 PM"
     },
     {
         "boleto": "54",
@@ -52,15 +52,15 @@
         "boleto": "33",
         "nombre": "Cristian",
         "telefono": "7778531667",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:32 PM"
     },
     {
         "boleto": "83",
         "nombre": "Heriberto",
         "telefono": "7778705191",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:32 PM"
     },
     {
         "boleto": "43",
@@ -206,8 +206,8 @@
         "boleto": "08",
         "nombre": "Araceli",
         "telefono": "7775004716",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "03:32 PM"
     },
     {
         "boleto": "22",
@@ -314,7 +314,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
-        {
+    {
         "boleto": "14",
         "nombre": "Amaury ",
         "telefono": "7771631369",
