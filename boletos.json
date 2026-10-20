@@ -75,5 +75,33 @@
         "telefono": "7775151487",
         "eliminado": false,
         "hora_eliminacion": null
+    },
+      {
+        "boleto": "45",
+        "nombre": "Daiela",
+        "telefono": "7774510723",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+      {
+        "boleto": "53",
+        "nombre": "Daniela",
+        "telefono": "7774510723",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+      {
+        "boleto": "35",
+        "nombre": "Eduardo",
+        "telefono": "7776199043",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+      {
+        "boleto": "46",
+        "nombre": "Eduardo",
+        "telefono": "7776199043",
+        "eliminado": false,
+        "hora_eliminacion": null
     }
 ]
