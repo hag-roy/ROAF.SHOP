@@ -45,8 +45,8 @@
         "boleto": "32",
         "nombre": "Rufina",
         "telefono": "7771977343",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:32 PM"
     },
     {
         "boleto": "48",
@@ -129,8 +129,8 @@
         "boleto": "99",
         "nombre": "Ali",
         "telefono": "7771077929",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:32 PM"
     },
     {
         "boleto": "65",
@@ -171,15 +171,15 @@
         "boleto": "03",
         "nombre": "Gaby Salgado",
         "telefono": "7773384994",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:32 PM"
     },
     {
         "boleto": "17",
         "nombre": "Gaby Salgado",
         "telefono": "7773384994",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:32 PM"
     },
     {
         "boleto": "23",
@@ -346,7 +346,7 @@
         "boleto": "34",
         "nombre": "Itzel",
         "telefono": "7772109786",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:32 PM"
     }
 ]
