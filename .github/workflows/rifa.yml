@@ -2,7 +2,15 @@ name: Motor de Sorteo RO Store
 
 on:
   schedule:
-    - cron: '0 20,21,22,23,0 * * *'
+    # 1. De 3:00 PM a 5:30 PM (Hora México) - Se ejecuta cada 30 min el 20 de Octubre
+    - cron: '0,30 21,22,23 20 10 *'
+    
+    # 2. De 6:00 PM a 6:30 PM (Hora México) - UTC ya cambió al 21 de Octubre
+    - cron: '0,30 0 21 10 *'
+    
+    # 3. Exactamente a las 7:00 PM (Hora México) - Elección del GANADOR
+    - cron: '0 1 21 10 *'
+    
   workflow_dispatch:
 
 jobs:
@@ -23,7 +31,7 @@ jobs:
       - name: Ejecutar el script de eliminación
         run: python sorteo.py
 
-      - name: Guardar cambios (Commit y Push)
+      - name: Guardar cambios
         run: |
           git config --global user.name 'GitHub Action Sorteo'
           git config --global user.email 'action@github.com'
