@@ -155,6 +155,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
+    
     {
         "boleto": "04",
         "nombre": "Santos",
@@ -162,6 +163,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
+    
     {
         "boleto": "19",
         "nombre": "Santos",
@@ -169,6 +171,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
+    
 
     {
         "boleto": "03",
@@ -177,6 +180,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
+    
        {
         "boleto": "17",
         "nombre": "Gaby Salgado",
@@ -184,13 +188,14 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
+    
        {
         "boleto": "23",
         "nombre": "Liliana Aguilar",
         "telefono": "7772750910",
         "eliminado": false,
         "hora_eliminacion": null
-    }
+    },
        {
         "boleto": "15",
         "nombre": "Esmeralda",
