@@ -124,5 +124,12 @@
         "telefono": "7771077929",
         "eliminado": false,
         "hora_eliminacion": null
+    },
+       {
+        "boleto": "13",
+        "nombre": "Afrodita",
+        "telefono": "7774102599",
+        "eliminado": false,
+        "hora_eliminacion": null
     }
 ]
