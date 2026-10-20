@@ -190,8 +190,8 @@
         .eliminado-card span.hora { font-size: 0.85em; color: #a0a0a0; margin-top: 8px; font-family: monospace; }
         
         #mensaje-estado { font-size: 1.3rem; color: #a0a0a0; margin-bottom: 15px; font-weight: 300; }
-
-        /* CRÉDITOS DEL CREADOR */
+        
+/* CRÉDITOS DEL CREADOR */
         .creditos-footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -202,10 +202,18 @@
             letter-spacing: 1px;
         }
 
-        .creditos-footer span {
+        .creditos-footer span, .creditos-footer a {
             color: var(--neon-blue);
             font-weight: bold;
             text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+            text-decoration: none; /* Quita la línea fea de abajo del link */
+            transition: all 0.3s ease;
+        }
+
+        /* Efecto al pasar el mouse por encima del link de Instagram */
+        .creditos-footer a:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
         }
 
         /* Responsivo para celulares */
@@ -260,7 +268,7 @@
 
         <!-- FIRMA COMO CREADOR -->
         <div class="creditos-footer">
-            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo / ROAF.SHOP </span> © 2026
+            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo / ROAF.SHOP </span> / <a href="https://www.instagram.com/roaf.shop?srtk=bzVzeWZrNWg1cjVj="_blank">ROAF.SHOP</a> © 2026
         </div>
     </div>
 
