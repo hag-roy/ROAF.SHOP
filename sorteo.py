@@ -27,7 +27,7 @@ if hora >= 19:
 
 # 2. De 3:00 PM a 6:30 PM, eliminamos de uno en uno cada media hora
 elif hora >= 15:
-    if len(activos) > 2: # Se detiene cuando solo quedan 2
+    if len(activos) > 2: # Se detiene cuando solo quedan 2 finalistas
         victima = random.choice(activos)
         for p in participantes:
             if p['boleto'] == victima['boleto']:
