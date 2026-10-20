@@ -6,6 +6,7 @@
         "eliminado": true,
         "hora_eliminacion": "03:32 PM"
     },
+    
     {
         "boleto": "28",
         "nombre": "Yeni",
@@ -38,6 +39,13 @@
         "boleto": "54",
         "nombre": "zair",
         "telefono": "7771793859",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+        {
+        "boleto": "32",
+        "nombre": "Rufina",
+        "telefono": "7771977343",
         "eliminado": false,
         "hora_eliminacion": null
     },
