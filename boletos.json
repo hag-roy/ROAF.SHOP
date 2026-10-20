@@ -73,8 +73,8 @@
         "boleto": "43",
         "nombre": "Salvador",
         "telefono": "7778694966",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:30 PM"
     },
     {
         "boleto": "29",
@@ -220,8 +220,8 @@
         "boleto": "22",
         "nombre": "Araceli",
         "telefono": "7775004716",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:30 PM"
     },
     {
         "boleto": "24",
@@ -248,8 +248,8 @@
         "boleto": "21",
         "nombre": "Maria Araceli",
         "telefono": "7772155016",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:30 PM"
     },
     {
         "boleto": "07",
@@ -262,8 +262,8 @@
         "boleto": "12",
         "nombre": "Maricela",
         "telefono": "7771352455",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:30 PM"
     },
     {
         "boleto": "01",
@@ -297,8 +297,8 @@
         "boleto": "11",
         "nombre": "Jesus Briones",
         "telefono": "7773425102",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:30 PM"
     },
     {
         "boleto": "80",
@@ -328,7 +328,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
-       {
+    {
         "boleto": "67",
         "nombre": "Diana",
         "telefono": "7775600288",
