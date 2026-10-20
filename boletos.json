@@ -6,7 +6,6 @@
         "eliminado": true,
         "hora_eliminacion": "03:32 PM"
     },
-    
     {
         "boleto": "28",
         "nombre": "Yeni",
@@ -42,7 +41,7 @@
         "eliminado": false,
         "hora_eliminacion": null
     },
-        {
+    {
         "boleto": "32",
         "nombre": "Rufina",
         "telefono": "7771977343",
@@ -109,8 +108,8 @@
         "boleto": "46",
         "nombre": "Eduardo",
         "telefono": "7776199043",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:01 PM"
     },
     {
         "boleto": "16",
@@ -235,15 +234,15 @@
         "boleto": "20",
         "nombre": "Victor",
         "telefono": "7772236936",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:01 PM"
     },
     {
         "boleto": "18",
         "nombre": "Maria Araceli",
         "telefono": "7772155016",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:01 PM"
     },
     {
         "boleto": "21",
@@ -277,8 +276,8 @@
         "boleto": "69",
         "nombre": "Itzel",
         "telefono": "7772109786",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:01 PM"
     },
     {
         "boleto": "06",
@@ -291,8 +290,8 @@
         "boleto": "02",
         "nombre": "Jesus Briones",
         "telefono": "7773425102",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "04:01 PM"
     },
     {
         "boleto": "11",
@@ -328,19 +327,19 @@
         "telefono": "7771631369",
         "eliminado": false,
         "hora_eliminacion": null
-    },    {
+    },
+    {
         "boleto": "42",
         "nombre": "Itzel",
         "telefono": "7772109786",
         "eliminado": false,
         "hora_eliminacion": null
     },
-        {
+    {
         "boleto": "34",
         "nombre": "Itzel",
         "telefono": "7772109786",
         "eliminado": false,
         "hora_eliminacion": null
     }
-    
 ]
