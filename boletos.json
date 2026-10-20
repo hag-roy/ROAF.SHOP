@@ -31,8 +31,8 @@
         "boleto": "25",
         "nombre": "Jesus",
         "telefono": "7774962455",
-        "eliminado": true,
-        "hora_eliminacion": "2026-10-19 23:16:50"
+        "eliminado": false,
+        "hora_eliminacion": "null"
     },
     {
         "boleto": "54",
