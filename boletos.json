@@ -131,5 +131,21 @@
         "telefono": "7774102599",
         "eliminado": false,
         "hora_eliminacion": null
+    },
+        {
+        "boleto": "36",
+        "nombre": "Diana",
+        "telefono": "7775600288",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+
+       {
+        "boleto": "37",
+        "nombre": "Diana",
+        "telefono": "7775600288",
+        "eliminado": false,
+        "hora_eliminacion": null
     }
+    
 ]
