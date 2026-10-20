@@ -52,8 +52,8 @@
         "boleto": "48",
         "nombre": "Faro",
         "telefono": "7341129140",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:00 PM"
     },
     {
         "boleto": "33",
@@ -143,15 +143,15 @@
         "boleto": "36",
         "nombre": "Diana",
         "telefono": "7775600288",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:00 PM"
     },
     {
         "boleto": "37",
         "nombre": "Diana",
         "telefono": "7775600288",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:00 PM"
     },
     {
         "boleto": "19",
@@ -199,8 +199,8 @@
         "boleto": "13",
         "nombre": "Esmeralda",
         "telefono": "7772050212",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:00 PM"
     },
     {
         "boleto": "10",
@@ -311,8 +311,8 @@
         "boleto": "82",
         "nombre": "Hasly ",
         "telefono": "7351096778",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "05:00 PM"
     },
     {
         "boleto": "09",
