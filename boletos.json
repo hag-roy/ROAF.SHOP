@@ -258,6 +258,13 @@
         "eliminado": true,
         "hora_eliminacion": "03:07 PM"
     },
+        {
+        "boleto": "74",
+        "nombre": "Diana",
+        "telefono": "7775600288",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
     {
         "boleto": "12",
         "nombre": "Maricela",
@@ -339,6 +346,21 @@
         "boleto": "42",
         "nombre": "Itzel",
         "telefono": "7772109786",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+        {
+        "boleto": "44",
+        "nombre": "Diana",
+        "telefono": "7775600288",
+        "eliminado": false,
+        "hora_eliminacion": null
+    },
+
+        {
+        "boleto": "92",
+        "nombre": "Diana",
+        "telefono": "7775600288",
         "eliminado": false,
         "hora_eliminacion": null
     },
