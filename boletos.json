@@ -17,8 +17,8 @@
         "boleto": "68",
         "nombre": "Daniela",
         "telefono": "7774510723",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "06:03 PM"
     },
     {
         "boleto": "27",
@@ -38,8 +38,8 @@
         "boleto": "54",
         "nombre": "zair",
         "telefono": "7771793859",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "06:03 PM"
     },
     {
         "boleto": "32",
@@ -185,8 +185,8 @@
         "boleto": "23",
         "nombre": "Liliana Aguilar",
         "telefono": "7772750910",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "06:03 PM"
     },
     {
         "boleto": "15",
@@ -227,8 +227,8 @@
         "boleto": "24",
         "nombre": "Victor",
         "telefono": "7772236936",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "06:03 PM"
     },
     {
         "boleto": "20",
@@ -258,7 +258,7 @@
         "eliminado": true,
         "hora_eliminacion": "03:07 PM"
     },
-        {
+    {
         "boleto": "74",
         "nombre": "Diana",
         "telefono": "7775600288",
@@ -346,18 +346,17 @@
         "boleto": "42",
         "nombre": "Itzel",
         "telefono": "7772109786",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "06:03 PM"
     },
-        {
+    {
         "boleto": "44",
         "nombre": "Diana",
         "telefono": "7775600288",
         "eliminado": false,
         "hora_eliminacion": null
     },
-
-        {
+    {
         "boleto": "92",
         "nombre": "Diana",
         "telefono": "7775600288",
