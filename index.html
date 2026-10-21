@@ -190,8 +190,8 @@
         .eliminado-card span.hora { font-size: 0.85em; color: #a0a0a0; margin-top: 8px; font-family: monospace; }
         
         #mensaje-estado { font-size: 1.3rem; color: #a0a0a0; margin-bottom: 15px; font-weight: 300; }
-        
-/* CRÉDITOS DEL CREADOR */
+
+        /* CRÉDITOS DEL CREADOR */
         .creditos-footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -206,11 +206,10 @@
             color: var(--neon-blue);
             font-weight: bold;
             text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
-            text-decoration: none; /* Quita la línea fea de abajo del link */
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        /* Efecto al pasar el mouse por encima del link de Instagram */
         .creditos-footer a:hover {
             color: var(--neon-pink);
             text-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
@@ -268,7 +267,7 @@
 
         <!-- FIRMA COMO CREADOR -->
         <div class="creditos-footer">
-            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo </span> / <a href="https://www.instagram.com/roaf.shop?srtk=bzVzeWZrNWg1cjVj="_blank">ROAF.SHOP</a> © 2026
+            Sistema desarrollado y diseñado por <span>Rodrigo Hernandez Acevedo</span> / <a href="https://www.instagram.com/roaf.shop/" target="_blank">ROAF.SHOP</a> © 2026
         </div>
     </div>
 
@@ -313,11 +312,13 @@
 
             // Si ya inició, mostramos las tarjetas de los que ya perdieron
             eliminados.forEach(p => {
+                // AQUÍ SE CORRIGIÓ EL PROBLEMA DE LA HORA
+                let horaMostrar = p.hora_eliminacion ? p.hora_eliminacion : "Hora no registrada";
                 gridHTML.innerHTML += `
                     <div class="eliminado-card">
                         <strong>❌ ${p.nombre}</strong>
                         <span>Boleto: ${p.boleto}</span>
-                        <span class="hora">Hora: ${p.hora_eliminacion.split(' ')[1]}</span>
+                        <span class="hora">Hora: ${horaMostrar}</span>
                     </div>`;
             });
 
@@ -329,7 +330,7 @@
             } 
             // ESTADO 3: EN PROCESO DE ELIMINACIÓN
             else if (eliminados.length > 0) {
-                mensaje.innerHTML = "Último participante eliminado:";
+                mensaje.innerHTML = "Últimos participantes eliminados:";
                 mensaje.style.color = "#a0a0a0"; // Reset de color
                 const ultimo = eliminados[eliminados.length - 1];
                 girarRuleta(`${ultimo.nombre} (Bol: ${ultimo.boleto})`, false, participantes);
