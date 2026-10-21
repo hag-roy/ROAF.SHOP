@@ -10,8 +10,8 @@
         "boleto": "28",
         "nombre": "Yeni",
         "telefono": "7772656041",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "68",
@@ -80,8 +80,8 @@
         "boleto": "29",
         "nombre": "Norberto",
         "telefono": "7775151487",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "45",
@@ -94,15 +94,15 @@
         "boleto": "53",
         "nombre": "Daniela",
         "telefono": "7774510723",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "35",
         "nombre": "Eduardo",
         "telefono": "7776199043",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "46",
@@ -115,8 +115,8 @@
         "boleto": "16",
         "nombre": "Afrodita",
         "telefono": "7774102599",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "26",
@@ -136,8 +136,8 @@
         "boleto": "65",
         "nombre": "Afrodita",
         "telefono": "7774102599",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "36",
@@ -332,8 +332,8 @@
         "boleto": "14",
         "nombre": "Amaury ",
         "telefono": "7771631369",
-        "eliminado": false,
-        "hora_eliminacion": null
+        "eliminado": true,
+        "hora_eliminacion": "07:01 PM"
     },
     {
         "boleto": "67",
