@@ -250,8 +250,8 @@
             </p>
         </div>
 
-        <!-- Buscador -->
-     
+    
+    
 
         <!-- Ruleta -->
         <div class="panel">
@@ -291,9 +291,23 @@
         }
 
         function procesarDatos(participantes) {
-            const eliminados = participantes.filter(p => p.eliminado);
+            let eliminados = participantes.filter(p => p.eliminado);
             const activos = participantes.filter(p => !p.eliminado);
             
+            // NUEVA FUNCIÓN: Ordenar cronológicamente por hora de eliminación
+            eliminados.sort((a, b) => {
+                function convertirMinutos(horaStr) {
+                    if (!horaStr || !horaStr.includes(":")) return 0;
+                    let [tiempo, ampm] = horaStr.split(" ");
+                    let [h, m] = tiempo.split(":");
+                    h = parseInt(h);
+                    if (h === 12) h = 0;
+                    if (ampm === "PM") h += 12;
+                    return (h * 60) + parseInt(m);
+                }
+                return convertirMinutos(a.hora_eliminacion) - convertirMinutos(b.hora_eliminacion);
+            });
+
             const gridHTML = document.getElementById("lista-eliminados");
             const mensaje = document.getElementById("mensaje-estado");
             
@@ -312,7 +326,7 @@
                 return; 
             }
 
-            // Mostrar tarjetas de los perdedores con la hora correcta
+            // Mostrar tarjetas de los perdedores ya ordenadas por tiempo
             eliminados.forEach(p => {
                 let horaMostrar = p.hora_eliminacion ? p.hora_eliminacion : "Hora no registrada";
                 gridHTML.innerHTML += `
@@ -336,7 +350,7 @@
             else if (eliminados.length > 0) {
                 mensaje.innerHTML = "Últimos participantes eliminados:";
                 mensaje.style.color = "#a0a0a0"; 
-                const ultimo = eliminados[eliminados.length - 1];
+                const ultimo = eliminados[eliminados.length - 1]; // Toma el último de la lista ordenada cronológicamente
                 girarRuleta(`${ultimo.nombre} (Bol: ${ultimo.boleto})`, false, participantes);
             }
         }
