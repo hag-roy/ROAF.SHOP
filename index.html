@@ -49,7 +49,7 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 40px var(--neon-blue);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             animation: pulse-glow 2s infinite alternate;
         }
 
@@ -241,6 +241,15 @@
     <div class="container">
         <h1>🎟️ ROAF.SHOP SORTEO</h1>
         
+        <!-- Panel de Agradecimiento (Oculto por defecto, se muestra solo al final) -->
+        <div id="panel-agradecimiento" class="panel" style="display: none; border-color: var(--neon-green); box-shadow: 0 0 20px rgba(0, 255, 102, 0.1);">
+            <h3 style="color: var(--neon-green); text-shadow: 0 0 10px rgba(0,255,102,0.5);">🎉 ¡EL SORTEO HA FINALIZADO! 🎉</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: #e2e8f0; margin-top: 10px;">
+                Muchísimas gracias a todos por su participación, confianza y apoyo a <strong>ROAF.SHOP</strong>. <br><br>
+                ¡Felicidades al afortunado ganador del <strong>POCO C71</strong>! Estén muy atentos a nuestras redes sociales para futuras dinámicas, promociones y nuevos productos.
+            </p>
+        </div>
+
         <!-- Buscador -->
         <div class="panel">
             <h3>🔍 Verifica tus boletos</h3>
@@ -310,9 +319,8 @@
                 return; 
             }
 
-            // Si ya inició, mostramos las tarjetas de los que ya perdieron
+            // Mostrar tarjetas de los perdedores con la hora correcta
             eliminados.forEach(p => {
-                // AQUÍ SE CORRIGIÓ EL PROBLEMA DE LA HORA
                 let horaMostrar = p.hora_eliminacion ? p.hora_eliminacion : "Hora no registrada";
                 gridHTML.innerHTML += `
                     <div class="eliminado-card">
@@ -324,6 +332,9 @@
 
             // ESTADO 2: GANADOR ABSOLUTO
             if (activos.length === 1 && eliminados.length > 0) {
+                // Hacemos visible el mensaje de agradecimiento
+                document.getElementById("panel-agradecimiento").style.display = "block";
+                
                 mensaje.innerHTML = "🏆 ¡TENEMOS UN GANADOR ABSOLUTO! 🏆";
                 mensaje.style.color = "var(--neon-green)";
                 girarRuleta(`¡${activos[0].nombre} (Bol: ${activos[0].boleto})!`, true, activos);
@@ -331,7 +342,7 @@
             // ESTADO 3: EN PROCESO DE ELIMINACIÓN
             else if (eliminados.length > 0) {
                 mensaje.innerHTML = "Últimos participantes eliminados:";
-                mensaje.style.color = "#a0a0a0"; // Reset de color
+                mensaje.style.color = "#a0a0a0"; 
                 const ultimo = eliminados[eliminados.length - 1];
                 girarRuleta(`${ultimo.nombre} (Bol: ${ultimo.boleto})`, false, participantes);
             }
@@ -365,7 +376,6 @@
             const misBoletos = baseDeDatos.filter(p => p.telefono === tel);
             
             if (misBoletos.length > 0) {
-                // 1. OBTENER LA HORA PARA EL SALUDO
                 const horaActual = new Date().getHours();
                 let saludo = "Buenas noches";
                 if (horaActual >= 5 && horaActual < 12) {
@@ -374,16 +384,13 @@
                     saludo = "Buenas tardes";
                 }
 
-                // 2. EXTRAER EL NOMBRE DEL PARTICIPANTE
                 const nombreParticipante = misBoletos[0].nombre;
 
-                // 3. FORMATO DE LOS BOLETOS
                 const infoBoletos = misBoletos.map(b => {
                     let estado = b.eliminado ? " <span style='color: var(--neon-pink); font-size: 0.9em;'>(💀 Eliminado)</span>" : " <span style='color: var(--neon-green); font-size: 0.9em;'>(✅ Activo)</span>";
                     return `<div style='background: rgba(0,0,0,0.5); padding: 8px 15px; border-radius: 8px; display: inline-block; margin: 5px; border: 1px solid rgba(0, 240, 255, 0.2);'>Boleto <strong>${b.boleto}</strong>${estado}</div>`;
                 }).join("");
 
-                // 4. MOSTRAR EL MENSAJE CON SALUDO PERSONALIZADO
                 res.innerHTML = `
                     <div style="margin-bottom: 15px; color: #fff; font-size: 1.2rem;">
                         👋 ¡${saludo}, <span style="color: var(--neon-blue); text-transform: uppercase; font-weight: bold;">${nombreParticipante}</span>!
